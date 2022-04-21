@@ -10,7 +10,7 @@ export default function Success() {
       <Purchase>
         <h2>Thanks for your purchase</h2>
         <p>Enjoy it!</p>
-        <span rol="img" aria-label="emoji">
+        <span role="img" aria-label="emoji">
           ❤️
         </span>
         <Link to="/">

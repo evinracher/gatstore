@@ -9,7 +9,7 @@ export default function Cancel() {
       <SEO title="Order cancellation" />
       <Purchase>
         <h2>You have cancelled your order</h2>
-        <span rol="img" aria-label="emoji">
+        <span role="img" aria-label="emoji">
           😞
         </span>
         <Link to="/">
