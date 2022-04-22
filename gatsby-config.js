@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Platzi store`,
+    title: `Gat store`,
     description: `A sample store with Gatsby`,
     author: `evinracher`,
   },
@@ -31,4 +31,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
