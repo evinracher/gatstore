@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import priceFormat from "../utils/priceFormat";
 import {
   Tag,
@@ -10,18 +10,31 @@ import {
   QtySelect,
 } from "../styles/components";
 import { SEO, Stars } from "../components";
+import { CartContext } from "../context";
 
-export default function Product({ name, sku: id, unit_amount, product }) {
+export default function Product({ id, unit_amount, product }) {
   const [size, setSize] = useState(2);
   const [quantity, setQuantity] = useState(1);
   const price = priceFormat(unit_amount);
+  const { addToCart } = useContext(CartContext);
+
+  const handleSubmit = () => {
+    addToCart({
+      id,
+      quantity,
+      price: unit_amount,
+      name: product.name,
+      image: product.images[0],
+    });
+  };
+
   return (
     <StyledProductDetail>
-      <SEO title={name} />
-      <img src={product.images[0]} alt={name} />
+      <SEO title={product.name} />
+      <img src={product.images[0]} alt={product.name} />
       <div>
         <Tag>Popular</Tag>
-        <h2>{name}</h2>
+        <h2>{product.name}</h2>
         <b>{price}</b>
         <Stars />
         <small>{product.description}</small>
@@ -53,7 +66,7 @@ export default function Product({ name, sku: id, unit_amount, product }) {
             +
           </button>
         </QtySelect>
-        <Button>Add to cart</Button>
+        <Button onClick={handleSubmit}>Add to cart</Button>
       </div>
     </StyledProductDetail>
   );

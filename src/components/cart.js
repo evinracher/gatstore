@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { Link } from "gatsby";
 import { Button, StyledCart } from "../styles/components";
 import priceFormat from "../utils/priceFormat";
@@ -6,6 +6,12 @@ import { CartContext } from "../context";
 
 export default function Cart() {
   const { cart } = useContext(CartContext);
+  const total = useMemo(
+    _ => cart.reduce((total, curr) => total + curr.price * curr.quantity, 0),
+    cart
+  );
+
+  console.log(total);
   return (
     <StyledCart>
       <h2>Cart</h2>
@@ -20,7 +26,7 @@ export default function Cart() {
           {cart.map(item => (
             <tr key={item.id}>
               <td>
-                <img src={item.product.images[0]} alt={item.name} />
+                <img src={item.image} alt={item.name} />
               </td>
               <td>{priceFormat(item.price)}</td>
               <td>{item.quantity}</td>
@@ -32,7 +38,7 @@ export default function Cart() {
       <nav>
         <div>
           <h3>Subtotal:</h3>
-          <small></small>
+          <small>{priceFormat(total)}</small>
         </div>
         <div>
           <Link to="/">
