@@ -50,7 +50,7 @@ export default function Product({ id, unit_amount, product }) {
         <QtySelect>
           <button
             onClick={() => {
-              if (quantity) {
+              if (quantity > 1) {
                 setQuantity(quantity - 1);
               }
             }}
