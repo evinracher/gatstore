@@ -6,3 +6,4 @@ export { default as Jumbo } from "./Jumbo";
 export { default as Products } from "./products";
 export { default as Product } from "./product";
 export { default as Stars } from "./stars";
+export { default as Cart } from "./cart";
