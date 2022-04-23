@@ -4,7 +4,6 @@ import priceFormat from "../utils/priceFormat";
 import { StyledProducts } from "../styles/components";
 
 export default function Products({ products }) {
-  console.log(products);
   return (
     <StyledProducts>
       <h2>Products</h2>
@@ -13,10 +12,7 @@ export default function Products({ products }) {
           const price = priceFormat(node.unit_amount);
           return (
             <article key={node.id}>
-              <img
-                src={node.product.images[0]}
-                alt={`Image of: ${node.product.name}`}
-              />
+              <img src={node.product.images[0]} alt={node.product.name} />
               <p>{node.product.name}</p>
               <small>{price}</small>
               <Link to={`/${node.id}`}>Buy</Link>
