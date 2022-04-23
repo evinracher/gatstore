@@ -9,7 +9,7 @@ import {
   StyledProductDetail,
   QtySelect,
 } from "../styles/components";
-import { SEO } from "../components";
+import { SEO, Stars } from "../components";
 
 export default function Product({ name, sku: id, unit_amount, product }) {
   const [size, setSize] = useState(2);
@@ -23,6 +23,8 @@ export default function Product({ name, sku: id, unit_amount, product }) {
         <Tag>Popular</Tag>
         <h2>{name}</h2>
         <b>{price}</b>
+        <Stars />
+        <small>{product.description}</small>
         {product.wear && (
           <SizeSelect selected={size}>
             <SizeButton onClick={() => setSize(1)}>XS</SizeButton>
@@ -51,6 +53,7 @@ export default function Product({ name, sku: id, unit_amount, product }) {
             +
           </button>
         </QtySelect>
+        <Button>Add to cart</Button>
       </div>
     </StyledProductDetail>
   );
