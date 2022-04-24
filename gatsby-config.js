@@ -10,6 +10,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-stripe`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,10 +36,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: "./src/utils/typography.js",
+        pathToConfigModule: "src/utils/typography.js",
       },
     },
-    `gatsby-plugin-stripe`,
     {
       resolve: `gatsby-source-stripe`,
       options: {
