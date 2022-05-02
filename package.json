@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gat-store",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple project using gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "evinracher <evinracher@gmail.com>",
   "dependencies": {
     "dotenv": "^16.0.0",
     "gatsby": "^2.8.8",
@@ -27,7 +27,11 @@
     "typography": "^0.16.21"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "1.19.1"
   },
   "keywords": [
     "gatsby"
@@ -43,9 +47,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/evinracher/gatstore"
   }
 }
