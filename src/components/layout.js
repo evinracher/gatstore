@@ -17,14 +17,17 @@ const Layout = ({ children }) => (
     <Header />
     <Content>
       <main>{children}</main>
-      <Footer>
-        With{" "}
-        <span role="img" aria-label="emoji">
-          ❤️
-        </span>{" "}
-        by evinracher. Using <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </Footer>
     </Content>
+    <Footer>
+      With{" "}
+      <span role="img" aria-label="emoji">
+        ❤️
+      </span>{" "}
+      by{" "}
+      <a href="https://github.com/evinracher" target="_blank">
+        evinracher
+      </a>
+    </Footer>
   </>
 );
 

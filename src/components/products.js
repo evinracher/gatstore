@@ -13,8 +13,10 @@ export default function Products({ products }) {
           return (
             <article key={node.id}>
               <img src={node.product.images[0]} alt={node.product.name} />
-              <p>{node.product.name}</p>
-              <small>{price}</small>
+              <div>
+                <p>{node.product.name}</p>
+                <small>{price}</small>
+              </div>
               <Link to={`/${node.id}`}>Buy</Link>
             </article>
           );
